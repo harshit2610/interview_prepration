@@ -1,0 +1,33 @@
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+       
+        int n=nums.size(),s=0,i,a;
+        n--;
+        a=n+1;
+        i=n;
+         int v[n+1];
+        while(i>=0)
+        {
+            if(nums[s]*nums[s]>nums[n]*nums[n])
+            {
+                v[i]=(nums[s]*nums[s]);
+              
+                s++;
+            }
+            else
+            {
+                v[i]=(nums[n]*nums[n]);
+      
+                n--;
+            }
+            i--;
+        }
+        vector<int> vv;
+        for(int i=0;i<a;i++)
+        {
+            vv.push_back(v[i]);
+        }
+        return vv;
+    }
+};
