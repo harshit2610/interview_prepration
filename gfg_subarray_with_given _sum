@@ -1,0 +1,53 @@
+int main()
+{
+int n;
+   
+cin>>n;
+
+int a[n],tar;
+    
+
+
+for(int i=0;i<n;i++)
+{
+    cin>>a[i];
+}
+
+cin>>tar;
+
+int in=0,fn=0,sum=a[0];
+
+if(sum==tar)
+{
+    cout<<"Starting And Ending Index : "<<1<<" & "<<1;
+    return 0;
+}
+for(int i=1;i<n;i++)
+{
+
+    
+
+    if(sum+a[i]>tar)
+    {  while(sum+a[i]>tar)
+        { 
+           sum-=a[in];
+           in++;
+        }
+    }
+
+
+     if(sum+a[i]==tar)
+    {
+        fn=i+1;
+        break;
+    } 
+
+
+    if(sum+a[i]<tar)
+    {    
+        sum+=a[i];
+    }   
+}
+
+cout<<"Starting And Ending Index : "<<in+1<<" & "<<fn;
+}
